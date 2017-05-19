@@ -14,17 +14,17 @@
                              BackgroundColor="DarkOrchid"
                              HorizontalOptions="FillAndExpand"
                              LongPressed="GestureFrame_LongPressed"
+                             SwipeDown="GestureFrame_SwipeDown"
                              SwipeLeft="GestureFrame_SwipeLeft"
                              SwipeRight="GestureFrame_SwipeRight"
-                             SwipeDown="GestureFrame_SwipeDown"
                              SwipeUp="GestureFrame_SwipeUp"
                              Tapped="GestureFrame_Tapped"
                              VerticalOptions="FillAndExpand" />
 
       <Label x:Name="Label"
-             VerticalOptions="CenterAndExpand"
              HorizontalOptions="CenterAndExpand"
-             Text="Output" />
+             Text="Output"
+             VerticalOptions="CenterAndExpand" />
 
     </StackLayout>
 
