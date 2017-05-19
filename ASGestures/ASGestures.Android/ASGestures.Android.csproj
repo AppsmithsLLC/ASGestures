@@ -128,7 +128,12 @@
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
-  <Import Project="..\ASGestures\ASGestures.projitems" Label="Shared" Condition="Exists('..\ASGestures\ASGestures.projitems')" />
+  <ItemGroup>
+    <ProjectReference Include="..\ASGestures\ASGestures.csproj">
+      <Project>{1e971616-4751-4b7b-bb8c-01667915f47e}</Project>
+      <Name>ASGestures</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
