@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="ASGestures.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ASGestures.Client.Controls;assembly=ASGestures.Client"
+             xmlns:local="clr-namespace:App1">
+
+
+  <ContentPage.Content>
+
+    <StackLayout Orientation="Vertical">
+
+      <controls:GestureFrame x:Name="GestureFrame"
+                             BackgroundColor="DarkOrchid"
+                             HorizontalOptions="FillAndExpand"
+                             LongPressed="GestureFrame_LongPressed"
+                             SwipeLeft="GestureFrame_SwipeLeft"
+                             SwipeRight="GestureFrame_SwipeRight"
+                             SwipeDown="GestureFrame_SwipeDown"
+                             SwipeUp="GestureFrame_SwipeUp"
+                             Tapped="GestureFrame_Tapped"
+                             VerticalOptions="FillAndExpand" />
+
+      <Label x:Name="Label"
+             VerticalOptions="CenterAndExpand"
+             HorizontalOptions="CenterAndExpand"
+             Text="Output" />
+
+    </StackLayout>
+
+  </ContentPage.Content>
+
+</ContentPage>
