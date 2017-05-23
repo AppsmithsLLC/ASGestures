@@ -1,5 +1,6 @@
 ﻿using Android.Views;
 using System;
+using System.Drawing;
 
 namespace ASGestures.Droid.Listeners
 {
@@ -14,6 +15,8 @@ namespace ASGestures.Droid.Listeners
         public event EventHandler OnSwipeRight;
         public event EventHandler OnTapped;
         public event EventHandler OnLongPressed;
+        public event EventHandler OnScrollUp;
+        public event EventHandler OnScrollDown;
 
         public override bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
         {
@@ -28,13 +31,11 @@ namespace ASGestures.Droid.Listeners
                 {
                     if (diffX > 0)
                     {
-                        if (OnSwipeRight != null)
-                            OnSwipeRight(this, null);
+                        OnSwipeRight?.Invoke(this, null);
                     }
                     else
                     {
-                        if (OnSwipeLeft != null)
-                            OnSwipeLeft(this, null);
+                        OnSwipeLeft?.Invoke(this, null);
                     }
                 }
             }
@@ -42,13 +43,11 @@ namespace ASGestures.Droid.Listeners
             {
                 if (diffY > 0)
                 {
-                    if (OnSwipeDown != null)
-                        OnSwipeDown(this, null);
+                    OnSwipeDown?.Invoke(this, null);
                 }
                 else
                 {
-                    if (OnSwipeUp != null)
-                        OnSwipeUp(this, null);
+                    OnSwipeUp?.Invoke(this, null);
                 }
             }
             return base.OnFling(e1, e2, velocityX, velocityY);
@@ -56,14 +55,31 @@ namespace ASGestures.Droid.Listeners
 
         public override bool OnSingleTapUp(MotionEvent e)
         {
-            OnTapped(this, null);
+            OnTapped?.Invoke(this, null);
             return base.OnSingleTapUp(e);
         }
 
         public override void OnLongPress(MotionEvent e)
         {
-            OnLongPressed(this, null);
+            OnLongPressed?.Invoke(this, null);
             base.OnLongPress(e);
+        }
+
+        public override bool OnScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)
+        {
+            var n = 270 - (Math.Atan2(0 - distanceY, 0 - distanceX)) * 180 / Math.PI;
+            var angle = n % 360;
+
+            if (angle > 65 && angle < 115)
+                OnSwipeLeft?.Invoke(this, null);
+            else if (angle > 115 && angle < 245)
+                OnScrollDown?.Invoke(this, null);
+            else if (angle > 245 && angle < 295)
+                OnSwipeRight?.Invoke(this, null);
+            else
+                OnScrollUp?.Invoke(this, null);
+                
+            return base.OnScroll(e1, e2, distanceX, distanceY);
         }
     }
 }

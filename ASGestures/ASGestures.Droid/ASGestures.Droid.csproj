@@ -111,6 +111,7 @@
     <Compile Include="Listeners\CustomGestureListener.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renderers\GestureFrameRenderer.cs" />
+    <Compile Include="Renderers\GestureScrollLayoutRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

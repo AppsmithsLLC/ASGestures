@@ -11,7 +11,7 @@
     <StackLayout Orientation="Vertical">
 
       <controls:GestureFrame x:Name="GestureFrame"
-                             BackgroundColor="DarkOrchid"
+                             BackgroundColor="Cornsilk"
                              HorizontalOptions="FillAndExpand"
                              LongPressed="GestureFrame_LongPressed"
                              SwipeDown="GestureFrame_SwipeDown"
@@ -19,7 +19,41 @@
                              SwipeRight="GestureFrame_SwipeRight"
                              SwipeUp="GestureFrame_SwipeUp"
                              Tapped="GestureFrame_Tapped"
-                             VerticalOptions="FillAndExpand" />
+                             VerticalOptions="FillAndExpand"
+                             HeightRequest="100" Margin="0,10,0,0"/>
+
+      <controls:GestureScrollView x:Name="GestureScrollView"
+                                  BackgroundColor="DarkOrchid"
+                                  HorizontalOptions="FillAndExpand"
+                                  ScrollDown="GestureScrollView_ScrollDown"
+                                  ScrollUp="GestureScrollView_ScrollUp"
+                                  SwipeRight="GestureScrollView_SwipeRight"
+                                  SwipeLeft="GestureScrollView_SwipeLeft"
+                                  VerticalOptions="FillAndExpand">
+        <StackLayout>
+          <Label Text="Label 1" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 2" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 3" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 4" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 5" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 6" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 7" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 8" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 9" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 10" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 11" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 12" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 13" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 14" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 15" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 16" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 17" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 18" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 19" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 20" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+          <Label Text="Label 21" HorizontalOptions="FillAndExpand" HeightRequest="30" />
+        </StackLayout>
+      </controls:GestureScrollView>
 
       <Label x:Name="Label"
              HorizontalOptions="CenterAndExpand"

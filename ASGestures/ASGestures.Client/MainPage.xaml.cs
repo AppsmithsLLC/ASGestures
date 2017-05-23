@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace ASGestures
 {
@@ -6,7 +8,7 @@ namespace ASGestures
     {
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void GestureFrame_SwipeDown(object sender, System.EventArgs e)
@@ -38,5 +40,41 @@ namespace ASGestures
         {
             Label.Text = "Long Press";
         }
+
+        private void GestureScrollView_ScrollDown(object sender, EventArgs e)
+        {
+            Label.Text = "Scroll Down";
+        }
+
+        private void GestureScrollView_ScrollUp(object sender, EventArgs e)
+        {
+            Label.Text = "Scroll Up";
+        }
+
+        private void GestureScrollView_SwipeRight(object sender, EventArgs e)
+        {
+            Label.Text = "Swipe Right";
+        }
+
+        private void GestureScrollView_SwipeLeft(object sender, EventArgs e)
+        {
+            Label.Text = "Swipe Left";
+        }
     }
+    class Person
+    {
+        public Person(string name, DateTime birthday, Color favoriteColor)
+        {
+            this.Name = name;
+            this.Birthday = birthday;
+            this.FavoriteColor = favoriteColor;
+        }
+
+        public string Name { private set; get; }
+
+        public DateTime Birthday { private set; get; }
+
+        public Color FavoriteColor { private set; get; }
+    };
+
 }
