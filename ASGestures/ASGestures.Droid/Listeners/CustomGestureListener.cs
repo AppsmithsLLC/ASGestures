@@ -67,17 +67,20 @@ namespace ASGestures.Droid.Listeners
 
         public override bool OnScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)
         {
-            var n = 270 - (Math.Atan2(0 - distanceY, 0 - distanceX)) * 180 / Math.PI;
-            var angle = n % 360;
+            if (Math.Abs(distanceX) > 20 || Math.Abs(distanceY) > 20)
+            {
+                var n = 270 - (Math.Atan2(0 - distanceY, 0 - distanceX)) * 180 / Math.PI;
+                var angle = n % 360;
 
-            if (angle > 65 && angle < 115)
-                OnSwipeLeft?.Invoke(this, null);
-            else if (angle > 115 && angle < 245)
-                OnScrollDown?.Invoke(this, null);
-            else if (angle > 245 && angle < 295)
-                OnSwipeRight?.Invoke(this, null);
-            else
-                OnScrollUp?.Invoke(this, null);
+                if (angle > 65 && angle < 115)
+                    OnSwipeLeft?.Invoke(this, null);
+                else if (angle > 115 && angle < 245)
+                    OnScrollDown?.Invoke(this, null);
+                else if (angle > 245 && angle < 295)
+                    OnSwipeRight?.Invoke(this, null);
+                else
+                    OnScrollUp?.Invoke(this, null);
+            }
                 
             return base.OnScroll(e1, e2, distanceX, distanceY);
         }
